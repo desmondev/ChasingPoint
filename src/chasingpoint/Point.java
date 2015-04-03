@@ -12,19 +12,19 @@ import java.awt.Graphics;
  *
  * @author Damian
  */
-public class Punkt {
+public class Point {
 
     private final String name;
     private double x;
     private double y;
 
-    public Punkt(String name, double x, double y) {
+    public Point(String name, double x, double y) {
         this.name = name;
         this.x = x;
         this.y = y;
     }
 
-    public Punkt(String name) {
+    public Point(String name) {
         this.name = name;
     }
 
@@ -62,7 +62,7 @@ public class Punkt {
         return (wynik);
     }
 
-    public double obliczOdleglosc(Punkt p) {
+    public double obliczOdleglosc(Point p) {
         double wynik;
 
         wynik = Math.sqrt((p.getX() - this.x) * (p.getX() - this.x) + (p.getY() - this.y) * (p.getY() - this.y));

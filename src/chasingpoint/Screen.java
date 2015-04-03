@@ -31,10 +31,10 @@ public final class Screen extends JPanel implements Runnable {
     private boolean running = false;    //flaga czy program sie zakonczyl
     private int ticks = 0;              //liczba tikow
 
-    private Punkt p1;              //ostatni punkt krzywej 1
-    private Punkt p2;              //ostatni punkt krzywej 2
-    private final ArrayList<Punkt> krzywa1;   //punkty krzywej 1
-    private final ArrayList<Punkt> krzywa2;   //punkty krzywej 2
+    private Point p1;              //ostatni punkt krzywej 1
+    private Point p2;              //ostatni punkt krzywej 2
+    private final ArrayList<Point> krzywa1;   //punkty krzywej 1
+    private final ArrayList<Point> krzywa2;   //punkty krzywej 2
 
     public Screen() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -61,8 +61,8 @@ public final class Screen extends JPanel implements Runnable {
         // if ( krzywe nic nie zawieraja to tworzymy nowy punkty) 
         if (krzywa1.isEmpty() && krzywa2.isEmpty()) {
 
-            p2 = new Punkt("b", generateRandom(), generateRandom());
-            p1 = new Punkt("a", generateRandom(), generateRandom());
+            p2 = new Point("b", generateRandom(), generateRandom());
+            p1 = new Point("a", generateRandom(), generateRandom());
 
             krzywa1.add(p1);
             krzywa2.add(p2);
@@ -84,8 +84,8 @@ public final class Screen extends JPanel implements Runnable {
             p1.setX(p1.getX() + p1_speed_X);
             p1.setY(p1.getY() + p1_speed_Y);
 
-            krzywa1.add(new Punkt("a", p1.getX(), p1.getY()));
-            krzywa2.add(new Punkt("b", p2.getX(), p2.getY()));
+            krzywa1.add(new Point("a", p1.getX(), p1.getY()));
+            krzywa2.add(new Point("b", p2.getX(), p2.getY()));
 
             p2.przesunX(shiftX);
             p2.przesunY(shiftY);
